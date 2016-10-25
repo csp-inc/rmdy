@@ -1,0 +1,10 @@
+Package: rmdy
+Title: CSP's rmarkdown 'remedy'
+Version: 1.0.0
+Authors@R: person("Luke", "Zachmann", email = "luke@csp-inc.org", role = c("aut", "cre"))
+Description: The rmdy package contains ready-to-use HTML output formats and
+    templates for RMarkdown documents.
+License: GPL (>= 2)
+Encoding: UTF-8
+Imports: rmarkdown
+RoxygenNote: 5.0.1.9000
