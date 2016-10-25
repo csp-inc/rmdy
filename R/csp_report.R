@@ -20,6 +20,7 @@ csp_report <- function(toc = TRUE, theme = 'flatly', ...) {
   rmarkdown::html_document(toc = toc,
                            theme = theme,
                            css = css,
-                           includes = rmarkdown::includes(before_body = header),
+                           includes = rmarkdown::includes(before_body = header,
+                                                          after_body = footer),
                            ...)
 }
