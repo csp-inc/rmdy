@@ -1,6 +1,6 @@
 ---
 title: "Untitled"
-output: csp_report
+output: rmdy::csp_report
 ---
 
 ```{r setup, include=FALSE}

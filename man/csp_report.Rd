@@ -4,7 +4,7 @@
 \alias{csp_report}
 \title{Convert to an HTML CSP Report.}
 \usage{
-csp_report(toc = TRUE, theme = "flatly", ...)
+csp_report(toc = TRUE, theme = "flatly", template = "default", ...)
 }
 \arguments{
 \item{toc}{Generate a Table of Contents? Defaults to TRUE.}
