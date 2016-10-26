@@ -66,17 +66,17 @@ $endif$
 
 $if(abstract)$
 <style type="text/css">
-  p.abstract{
-    width: 90%;
-    text-align: center;
-    font-weight: bold;
+  hr.abstract {
+      border: 0;
+      height: 1px;
+      width: 80%;
+      background: #333;
+      background-image: linear-gradient(to right, #ccc, #333, #ccc);
   }
   div.abstract{
     margin: auto;
-    width: 100%;
-    background:
-    	linear-gradient(to right, #ced8d7 , transparent);
-    padding:2px;
+    width: 80%;
+    font-style: italic;
   }
 </style>
 $endif$
@@ -126,9 +126,11 @@ $endfor$
 $if(theme)$
 <style type = "text/css">
 .main-container {
+  width: 95%;
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 40px;
 }
 code {
   color: inherit;
@@ -432,10 +434,11 @@ $if(date)$
 <h4 class="date"><em>$date$</em></h4>
 $endif$
 $if(abstract)$
+<hr class="abstract"></hr>
 <div class="abstract">
-<p class="abstract">Abstract</p>
 $abstract$
 </div>
+<hr class="abstract"></hr>
 $endif$
 $endif$
 

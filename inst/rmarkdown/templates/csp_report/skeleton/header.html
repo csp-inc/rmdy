@@ -1,27 +1,43 @@
-<div class="topbar">
-    <div class="topbar_text" style="float:left">A CONSERVATION SCIENCE PARTNERS REPORT</div>
-    <div class="topbar_image" style="float:right">
+<div class="topbar_container">
+  <div class="topbar">
+    <div class="tb_text" style="float:left">A CONSERVATION SCIENCE PARTNERS REPORT</div>
+    <div class="tb_image" style="float:right">
         <img src="http://gdurl.com/sNTx" />
     </div>
+  </div>
 </div>
 
 <style type="text/css">
+.topbar_container {
+  width:100%;
+  position:fixed;
+  top:0px;
+  left:0px;
+}
 .topbar {
-    width:100%;
-    height:50px;
-    background:#333;
+  height:50px;
+  width:98%;
+  background:#333;
+  margin: 0px auto;
 }
-.topbar_text {
-    //border:1px solid blue;
+/*.content {
+  height:2000px;
+  width:100%;
+}*/
+.tb_text {
+    /*border:1px solid blue;*/
     color:#CCC;
-    margin-top: 15px;
+    margin-top: 10px;
     margin-left: 20px;
+    font-size: 20px;
 }
-.topbar_image img {
-    //border:1px solid red;
+.tb_image img {
+    /*border:1px solid red;*/
     width:40px;
     height:40px;
     margin-top: 5px;
     margin-right: 20px;
 }
 </style>
+
+<!-- <div class="content"></div> -->
