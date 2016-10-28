@@ -30,3 +30,5 @@ output:
     template: html_csp
 ---
 ```
+
+For a complete example of the rmdy package template in action, head over to https://github.com/lzachmann/4fri-lpa-report. You might also read through RStudio's excellent [documentation](http://rmarkdown.rstudio.com/rmarkdown_websites.html#overview).  

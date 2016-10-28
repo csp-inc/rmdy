@@ -24,8 +24,8 @@ csp_report <- function(toc = TRUE, smart = TRUE, theme = "flatly",
                             package = "rmdy")
   css <-
     system.file(file.path(resources_dir, "styles.css"), package = "rmdy")
-  header <-
-    system.file(file.path(resources_dir, "header.html"), package = "rmdy")
+  # header <-
+  #   system.file(file.path(resources_dir, "header.html"), package = "rmdy")
   footer <-
     system.file(file.path(resources_dir, "footer.html"), package = "rmdy")
 
@@ -36,7 +36,7 @@ csp_report <- function(toc = TRUE, smart = TRUE, theme = "flatly",
                            highlight = highlight,
                            template = template,
                            css = css,
-                           includes = rmarkdown::includes(in_header = header,
+                           includes = rmarkdown::includes(#in_header = header,
                                                           after_body = footer),
                            ...)
 }
