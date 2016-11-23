@@ -2,7 +2,7 @@ The __rmdy__ package contains ready-to-use HTML output formats and templates for
 
 ### Installation
 
-You can install the package directly from this repostory using:
+You can install the package directly from this repository using:
 
 ``` r
 devtools::install_github("csp-inc/rmdy")
@@ -24,9 +24,16 @@ abstract: |
 bibliography: bibliography.bib
 csl: conservation-biology.csl
 output:
-  rmdy::csp_report:
+  rmdy::csp_page:
     template: html_csp
 ---
 ```
 
-For a complete example of a rmdy package template in action, head over to https://github.com/lzachmann/4fri-lpa-report. You might also read through RStudio's excellent [documentation](http://rmarkdown.rstudio.com/rmarkdown_websites.html#overview).  
+Calling `rmdy::csp_page` in the front-matter of your document will copy the two
+files you will need to render your R Markdown document as a website with a
+CSP-flavored navigation bar. Specifically, when you knit the file for the first
+time, you'll see `_site.yml` and `_navbar.html` show up in your working
+directory.
+
+For a complete example of a __rmdy__ package template in action, head over to https://github.com/lzachmann/4fri-lpa-report. You might also read through
+RStudio's excellent [documentation](http://rmarkdown.rstudio.com/rmarkdown_websites.html#overview).  

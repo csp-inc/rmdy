@@ -33,8 +33,8 @@ csp_page <- function(toc = TRUE, smart = TRUE, theme = "flatly",
   writeLines(new_navbar_html, con=file.path(getwd(), '_navbar.html'))
   footer <-
     system.file(file.path(resources_dir, "footer.html"), package = "rmdy")
-  yaml <- system.file(file.path(resources_dir, "_site.yaml"), package = "rmdy")
-  file.copy(from = yaml, to = file.path(getwd(), '_site.yaml'), overwrite=TRUE)
+  yaml <- system.file(file.path(resources_dir, "_site.yml"), package = "rmdy")
+  file.copy(from = yaml, to = file.path(getwd(), '_site.yml'), overwrite=TRUE)
 
   # call the base html_document function
   rmarkdown::html_document(toc = toc,
