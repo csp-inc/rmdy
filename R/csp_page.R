@@ -1,6 +1,6 @@
-#' Convert to an HTML CSP Report.
+#' Convert to an HTML CSP Page
 #'
-#' A CSP Report is a lightweight webpage suitable for sharing.
+#' A CSP Page is a lightweight webpage suitable for sharing.
 #' @param toc Generate a Table of Contents? Defaults to \code{true}.
 #' @param theme Visual theme. Defaults to \code{flatly}. Other good options may
 #' include \code{journal}, \code{united}, \code{sandstone}, or \code{yeti}.
@@ -14,35 +14,35 @@
 #' use the rmdy package template .
 #' @export
 
-csp_report <- function(toc = TRUE, smart = TRUE, theme = "flatly",
+csp_page <- function(toc = TRUE, smart = TRUE, theme = "flatly",
                        highlight = "tango", template = "default", ...) {
 
   # get the locations of resource files located within the package
-  resources_dir <- "rmarkdown/templates/csp_report/skeleton"
+  resources_dir <- "rmarkdown/templates/csp_page/skeleton"
   if (template=="html_csp")
     template <- system.file(file.path(resources_dir, "default_fork.html"),
                             package = "rmdy")
   css <-
     system.file(file.path(resources_dir, "styles.css"), package = "rmdy")
-  header <-
-     system.file(file.path(resources_dir, "header.html"), package = "rmdy")
+  navbar <-
+     system.file(file.path(resources_dir, "_navbar.html"), package = "rmdy")
   logo <-
     system.file(file.path(resources_dir, "logo.png"), package = "rmdy")
-  header_html  <- readLines(header)
-  new_header_html  <- sub(pattern = "logo.png", replace = logo, x = header_html)
-  new_header <- tempfile(fileext=".html")
-  writeLines(new_header_html, con=new_header)
+  navbar_html  <- readLines(navbar)
+  new_navbar_html  <- sub(pattern = "logo.png", replace = logo, x = navbar_html)
+  writeLines(new_navbar_html, con=file.path(getwd(), '_navbar.html'))
   footer <-
     system.file(file.path(resources_dir, "footer.html"), package = "rmdy")
+  yaml <- system.file(file.path(resources_dir, "_site.yaml"), package = "rmdy")
+  file.copy(from = yaml, to = file.path(getwd(), '_site.yaml'), overwrite=TRUE)
 
   # call the base html_document function
   rmarkdown::html_document(toc = toc,
-                           smart = TRUE,
+                           smart = smart,
                            theme = theme,
                            highlight = highlight,
                            template = template,
                            css = css,
-                           includes = rmarkdown::includes(in_header = new_header,
-                                                          after_body = footer),
+                           includes = rmarkdown::includes(after_body = footer),
                            ...)
 }
